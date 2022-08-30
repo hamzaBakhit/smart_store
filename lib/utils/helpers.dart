@@ -24,11 +24,13 @@ mixin Helpers {
 
 
   void showBottomSheet(BuildContext context,Widget widget) async {
-    bool? confirmed =
-    await showModalBottomSheet(context: context, builder: (context) {
-      return BottomSheet(onClosing: () {}, builder: (context) {
-        return StatefulBuilder(builder: (context, setState) {
-          return widget;
+    Future.delayed(Duration.zero,()async{
+      bool? confirmed =
+          await showModalBottomSheet(context: context, builder: (context) {
+        return BottomSheet(onClosing: () {}, builder: (context) {
+          return StatefulBuilder(builder: (context, setState) {
+            return widget;
+          });
         });
       });
     });

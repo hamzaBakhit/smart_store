@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smart_store/model/Category.dart';
 import 'package:smart_store/model/Prouct.dart';
 import 'package:smart_store/presintation/resources/assets_manager.dart';
+import 'package:smart_store/presintation/resources/color_manager.dart';
 import 'package:smart_store/presintation/resources/routs_manager.dart';
 import 'package:smart_store/presintation/resources/values_manager.dart';
 import 'package:smart_store/widgets/categories_grid_view.dart';
@@ -34,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final List<Category> _categories = <Category>[
-    Category('Furniture', ImageAssets.category1),
-    Category('Fashion', ImageAssets.category2),
+    Category('Furniture', ImageAssets.fashion),
+    Category('Fashion', ImageAssets.fashion),
   ];
 
   final List<Product> _products = <Product>[
@@ -59,7 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Text(
           'Home',
@@ -77,7 +77,43 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: Drawer(
-
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(15),
+              height: 200,
+              child: UserAccountsDrawerHeader(
+                decoration: const BoxDecoration(color: Colors.white),
+                currentAccountPicture: CircleAvatar(
+                  child: Image.asset(ImageAssets.person),
+                ),
+                accountName: Text('Hamza bakhit'),
+                accountEmail: Text('hamzaqwer0599@gmail.com'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Home',
+                    style: GoogleFonts.cairo(
+                        color: ColorManager.primary,
+                        fontSize: AppSize.s22,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  _getTextButton(_navigateToCategoryScreen, 'Category'),
+                  _getTextButton(_navigateToMyLikeScreen, 'My likes'),
+                  getSizedBox40(),
+                  _getTextButton(_navigateToAboutScreen, 'About'),
+                  _getTextButton(_navigateToLoginScreen, 'Logout'),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
@@ -96,7 +132,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   CategoryWidget(image: _categories[index].image),
             ),
           ),
-
           // categories section
           getSizedBox20(),
           HomeSection(title: 'Categories', onPressed: _seeAllCategory),
@@ -138,5 +173,48 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _navigateToNotificationScreen() {
     Navigator.pushNamed(context, Routs.notificationScreen);
+  }
+
+  _getTextButton(Function() onTab, String text) {
+    return TextButton(
+      onPressed: onTab,
+      child: Text(
+        text,
+        style: _getTextStyle(),
+      ),
+    );
+  }
+
+  TextStyle _getTextStyle() {
+    return GoogleFonts.cairo(
+      color: Colors.black,
+      fontSize: AppSize.s16,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  _navigateToCategoryScreen() {
+    _navigateToNewScreen(context,Routs.categoriesScreen);
+  }
+
+  _navigateToMyLikeScreen() {
+    _navigateToNewScreen(context,Routs.favoriteProductScreen);
+  }
+
+  _navigateToAboutScreen() {
+    _navigateToNewScreen(context,Routs.aboutScreen);
+  }
+
+  _navigateToLoginScreen() {
+    Future.delayed(Duration.zero,(){
+    Navigator.pushReplacementNamed(context, Routs.loginScreen);
+    });
+  }
+
+  _navigateToNewScreen(BuildContext context,String routName) {
+    Navigator.pop(context);
+    Future.delayed(const Duration(milliseconds: 500), () {
+      Navigator.pushNamed(context, routName);
+    });
   }
 }

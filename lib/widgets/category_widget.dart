@@ -15,9 +15,15 @@ class CategoryWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: ColorManager.grey2,
         ),
-        child: Image.asset(
-          image,
-          fit: BoxFit.cover,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20)
+          ),
+          child: Image.asset(
+            image,
+            fit: BoxFit.cover,
+
+          ),
         ),
       ),
     );

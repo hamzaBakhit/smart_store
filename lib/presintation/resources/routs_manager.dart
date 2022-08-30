@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:smart_store/screens/about_us_screen.dart';
 import 'package:smart_store/screens/addresses/adresses_screen.dart';
 import 'package:smart_store/screens/addresses/new_address_screen.dart';
 import 'package:smart_store/screens/app/categories_screen.dart';
+import 'package:smart_store/screens/app/drawer/my_likes_screen.dart';
 import 'package:smart_store/screens/app/favorite_product_screen.dart';
 import 'package:smart_store/screens/app/home_screen.dart';
 import 'package:smart_store/screens/app/latest_product.dart';
@@ -37,6 +39,8 @@ mixin Routs {
   static const String notificationScreen = "/notification_screen";
   static const String settingsScreen = "/settings_screen";
   static const String creditCardScreen = "/credit_card_screen";
+  static const String myLikesScreen = "/my_likes_screen";
+  static const String aboutScreen = "/about_us_screen";
 }
 
 class RouteGenerator {
@@ -77,7 +81,11 @@ class RouteGenerator {
       case Routs.settingsScreen:
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case Routs.creditCardScreen:
-        return MaterialPageRoute(builder: (_) => const CreditCardScreen());
+        return MaterialPageRoute(builder: (_) => CreditCardScreen());
+      case Routs.myLikesScreen:
+        return MaterialPageRoute(builder: (_) => const MyLikeScreen());
+      case Routs.aboutScreen:
+        return MaterialPageRoute(builder: (_) => const AboutUsScreen());
       default:
         return unDefinedRoute();
     }

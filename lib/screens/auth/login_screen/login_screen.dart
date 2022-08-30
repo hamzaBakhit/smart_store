@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Spacer(),
               // log in button
-            AppTextButton(actionName: 'Login', onTab: (){}),
+            AppTextButton(actionName: 'Login', onTab: _navigateToHomeScreen),
               // //don't have an account
               const SizedBox(
                 height: 10,
@@ -134,6 +134,10 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  _navigateToHomeScreen(){
+    Navigator.pushReplacementNamed(context,Routs.homeScreen);
   }
 }
 

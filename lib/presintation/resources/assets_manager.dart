@@ -17,4 +17,7 @@ class ImageAssets {
   static const String team = "$IMAGE_PATH/team.svg";
   static const String profile = "$IMAGE_PATH/profile.png";
   static const String phoneNumber = "$IMAGE_PATH/phone_number.PNG";
+  static const String furnature = "$IMAGE_PATH/furnature.PNG";
+  static const String fashion = "$IMAGE_PATH/fashion.PNG";
+  static const String person = "$IMAGE_PATH/person.png";
 }

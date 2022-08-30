@@ -41,7 +41,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
                       fontWeight: FontWeight.bold,
                       color: ColorManager.primary,
                       fontSize: 80),
-                  duration: Duration(milliseconds: 1500),
+                  duration: const Duration(milliseconds: 1500),
                 ),
               ],
             ),

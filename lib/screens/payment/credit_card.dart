@@ -38,7 +38,7 @@ class CreditCardScreenState extends State<CreditCardScreen> {
       title: 'Flutter Credit Card View Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -65,7 +65,7 @@ class CreditCardScreenState extends State<CreditCardScreen> {
                   expiryDate: expiryDate,
                   cardHolderName: cardHolderName,
                   cvvCode: cvvCode,
-                  bankName: 'Axis Bank',
+                  bankName: 'Palestine Bank',
                   showBackView: isCvvFocused,
                   obscureCardNumber: true,
                   obscureCardCvv: true,

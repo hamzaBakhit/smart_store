@@ -14,7 +14,7 @@ import 'package:smart_store/screens/auth/login_screen/forgote_password.dart';
 import 'package:smart_store/screens/auth/login_screen/login_screen.dart';
 import 'package:smart_store/screens/auth/register_screen/register_screen.dart';
 import 'package:smart_store/screens/auth/register_screen/verify_register_screen.dart';
-import 'package:smart_store/screens/credit_card.dart';
+import 'package:smart_store/screens/payment/credit_card.dart';
 import 'package:smart_store/screens/launch_screen/launch_screen.dart';
 import 'package:smart_store/screens/notification_screen.dart';
 import 'package:smart_store/screens/onboarding/onboarding_screen.dart';

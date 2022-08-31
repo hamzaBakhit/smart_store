@@ -13,51 +13,54 @@ class AboutUsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(
             right: AppSize.s26, left: AppSize.s26, top: AppSize.s120),
-        child: Column(
-          children: [
-            Text(
-              'About us...',
-              style: GoogleFonts.cairo(
-                fontSize: AppSize.s22,
-                fontWeight: FontWeight.bold,
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+
+            children: [
+              Text(
+                'About us...',
+                style: GoogleFonts.cairo(
+                  fontSize: AppSize.s22,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  child: Image(
+              getSizedBox60(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Image(
                     image: Svg(ImageAssets.splashLogo),
-                    width: 200,
-                    height: 200,
+                    width: 150,
+                    height: 150,
                   ),
-                ),
-                getSizedBox40(),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Facebook',
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                        fontSize: AppSize.s16),
+                  getSizedBox60(),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Facebook',
+                      style: GoogleFonts.cairo(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                          fontSize: AppSize.s16),
+                    ),
                   ),
-                ),
-                getSizedBox20(),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Instagram',
-                    style: GoogleFonts.cairo(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                        fontSize: AppSize.s16),
+                  getSizedBox20(),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Instagram',
+                      style: GoogleFonts.cairo(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                          fontSize: AppSize.s16),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

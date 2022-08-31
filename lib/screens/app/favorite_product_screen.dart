@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smart_store/model/Prouct.dart';
+import 'package:smart_store/model/Product.dart';
 import 'package:smart_store/presintation/resources/assets_manager.dart';
 import 'package:smart_store/widgets/product_grid_view.dart';
 

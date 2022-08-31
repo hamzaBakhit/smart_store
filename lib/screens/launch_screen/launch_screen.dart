@@ -18,7 +18,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, Routs.onboardingScreen);
+      // Navigator.pushNamed(context, Routs.onboardingScreen);
     });
   }
 

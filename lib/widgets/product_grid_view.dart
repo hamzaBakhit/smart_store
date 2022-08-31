@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_store/model/Prouct.dart';
+import 'package:smart_store/model/Product.dart';
 
 import 'product_widget.dart';
 

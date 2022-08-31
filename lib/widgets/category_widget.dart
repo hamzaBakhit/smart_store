@@ -13,7 +13,7 @@ class CategoryWidget extends StatelessWidget {
         width: 235,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: ColorManager.grey2,
+          color: ColorManager.grey2.withOpacity(0.1),
         ),
         child: Container(
           decoration: BoxDecoration(
@@ -22,7 +22,6 @@ class CategoryWidget extends StatelessWidget {
           child: Image.asset(
             image,
             fit: BoxFit.cover,
-
           ),
         ),
       ),
